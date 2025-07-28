@@ -1,0 +1,37 @@
+<app-admin-menu></app-admin-menu>
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card border-0 rounded-4 shadow-sm bg-white">
+        <div class="card-body p-5">
+          <h3 class="text-center mb-4 fw-bold text-primary">➕ Add New Subject</h3>
+
+          <form (ngSubmit)="addSubject()" #subjectForm="ngForm">
+            <div class="form-floating mb-4">
+              <input
+                type="text"
+                class="form-control rounded-3"
+                id="subjectName"
+                placeholder="Enter subject name"
+                name="subjectName"
+                [(ngModel)]="subject.name"
+                required
+              />
+              <label for="subjectName">Subject Name</label>
+            </div>
+
+            <button
+              type="submit"
+              [disabled]="subjectForm.invalid"
+              class="btn btn-primary w-100 py-2 rounded-3 shadow-sm"
+              style="font-weight: 600; font-size: 1rem;"
+            >
+              ✅ Add Subject
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

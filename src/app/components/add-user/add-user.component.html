@@ -1,0 +1,61 @@
+<app-admin-menu></app-admin-menu>
+
+<div class="add-user-wrapper">
+  <div class="container">
+    <h2 class="form-title">Add New User</h2>
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <!-- Username -->
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" [(ngModel)]="user.username" name="username">
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" [(ngModel)]="user.password" name="password">
+          </div>
+
+          <!-- First Name -->
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter first name" [(ngModel)]="user.firstName" name="firstName">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <!-- Last Name -->
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter last name" [(ngModel)]="user.lastName" name="lastName">
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" [(ngModel)]="user.email" name="email">
+          </div>
+
+          <!-- Role -->
+          <div class="mb-3">
+            <label for="role" class="form-label">Role</label>
+            <select class="form-select" id="role" [(ngModel)]="user.role" name="role">
+              <option value="">Select Role</option>
+              <option value="admin">Admin</option>
+              <option value="faculty">Faculty</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <button type="submit" class="btn btn-primary w-100" (click)="addUser()">Add User</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

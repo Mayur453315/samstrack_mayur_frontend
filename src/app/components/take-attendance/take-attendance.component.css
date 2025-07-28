@@ -1,0 +1,77 @@
+body {
+  background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.attendance-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  transform: perspective(1000px);
+  transition: transform 0.3s ease;
+}
+
+/* .attendance-card:hover {
+  transform: perspective(1000px) rotateX(3deg) rotateY(2deg);
+} */
+
+.text-gradient {
+  background: linear-gradient(45deg, #007bff, #6610f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.table-3d {
+  background: #f9f9f9;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  border-radius: 12px;
+}
+
+.table-3d thead th {
+  background: linear-gradient(145deg, #343a40, #495057);
+  color: #ffffff;
+  border: none;
+}
+
+.table-3d tbody tr {
+  background-color: #ffffff;
+  transition: transform 0.2s ease-in-out;
+}
+
+.table-3d tbody tr:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.btn-gradient {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  transform: scale(1.03);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .attendance-card {
+    padding: 20px;
+  }
+  .text-center {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .attendance-card {
+    padding: 15px;
+  }
+  .btn-gradient {
+    padding: 10px;
+    font-size: 1rem;
+  }
+}

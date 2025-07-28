@@ -1,0 +1,53 @@
+<app-faculty-menu></app-faculty-menu>
+
+<div class="attendance-container container mt-5">
+  <div class="card shadow-lg attendance-card">
+    <div class="card-body">
+      <h2 class="text-center mb-4 display-6 text-gradient">📋 Take Attendance</h2>
+
+      <!-- Subject, Date, Time -->
+      <div class="row g-4 mb-4">
+        <div class="col-md-4">
+          <label for="subject" class="form-label fw-bold">Subject</label>
+          <select id="subject" class="form-select shadow-sm" (change)="changeSubject($event)">
+            <option value="">Select Subject</option>
+            <option *ngFor="let subject of subjects" [value]="subject.id">{{ subject.name }}</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="date" class="form-label fw-bold">Date</label>
+          <input type="date" id="date" class="form-control shadow-sm" (change)="changeDate($event)">
+        </div>
+        <div class="col-md-4">
+          <label for="time" class="form-label fw-bold">Time</label>
+          <input type="time" id="time" class="form-control shadow-sm" (change)="changeTime($event)">
+        </div>
+      </div>
+
+      <!-- Student Table -->
+      <div class="table-responsive shadow-sm rounded-3 overflow-hidden">
+        <table class="table table-bordered text-center mb-0 table-3d">
+          <thead class="table-dark">
+            <tr>
+              <th>Student Name</th>
+              <th>
+                <input type="checkbox" id="selectAll" (change)="toggleAll($event)">
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of students">
+              <td>{{ student.name }}</td>
+              <td>
+                <input type="checkbox" [checked]="selectedStudents.includes(student.id)" (change)="toggleStudent(student.id)">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Submit Button -->
+      <button class="btn btn-gradient mt-4 w-100 fw-bold shadow-lg" (click)="submitAttendance()">✅ Submit Attendance</button>
+    </div>
+  </div>
+</div>
